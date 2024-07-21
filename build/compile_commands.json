@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/LukasFasken/Desktop/Git/Projekts/Snake/build",
+  "command": "C:\\msys64\\mingw64_2\\ucrt64\\bin\\c++.exe -IC:/Users/LukasFasken/Desktop/Git/Projekts/Snake/include -IC:/Users/LukasFasken/Desktop/Git/Projekts/Snake/lib/SFML-2.6.1/include -g -std=gnu++11 -o CMakeFiles\\EGProject.dir\\src\\main.cpp.obj -c C:\\Users\\LukasFasken\\Desktop\\Git\\Projekts\\Snake\\src\\main.cpp",
+  "file": "C:\\Users\\LukasFasken\\Desktop\\Git\\Projekts\\Snake\\src\\main.cpp",
+  "output": "CMakeFiles\\EGProject.dir\\src\\main.cpp.obj"
+},
+{
+  "directory": "C:/Users/LukasFasken/Desktop/Git/Projekts/Snake/build",
+  "command": "C:\\msys64\\mingw64_2\\ucrt64\\bin\\c++.exe -IC:/Users/LukasFasken/Desktop/Git/Projekts/Snake/include -IC:/Users/LukasFasken/Desktop/Git/Projekts/Snake/lib/SFML-2.6.1/include -g -std=gnu++11 -o CMakeFiles\\EGProject.dir\\src\\utils.cpp.obj -c C:\\Users\\LukasFasken\\Desktop\\Git\\Projekts\\Snake\\src\\utils.cpp",
+  "file": "C:\\Users\\LukasFasken\\Desktop\\Git\\Projekts\\Snake\\src\\utils.cpp",
+  "output": "CMakeFiles\\EGProject.dir\\src\\utils.cpp.obj"
+}
+]
