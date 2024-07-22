@@ -3,7 +3,7 @@
 cmake_minimum_required(VERSION 3.30)
 
 # Create a project. Find and replace EGProject to give the project your own title.
-project(EGProject)
+project(Snake)
 
 # Set the version of C++ being used. Here, C++11.
 set (CMAKE_CXX_STANDARD 11)
@@ -17,7 +17,7 @@ include_directories("${CMAKE_SOURCE_DIR}/lib/SFML-2.6.1/include")
 link_directories("${CMAKE_SOURCE_DIR}/lib/SFML-2.6.1/lib")
 
 # Create the executable. Make sure to list every source file (I generally add the headers as well)
-add_executable(EGProject
+add_executable(Snake
     src/main.cpp
     src/utils.cpp
 )
@@ -25,8 +25,8 @@ add_executable(EGProject
 # This links the executable on Windows and Mac - it shouldn't be too difficult to add Linux as well.
 # If you've branched out into different parts of SFML, you might need different libraries; they can be added here.
 if (APPLE)
-  target_link_libraries(EGProject libsfml-graphics.2.4.dylib libsfml-window.2.4.dylib libsfml-system.2.4.dylib)
+  target_link_libraries(Snake libsfml-graphics.2.4.dylib libsfml-window.2.4.dylib libsfml-system.2.4.dylib)
 endif (APPLE)
 if (WIN32)
-  target_link_libraries(EGProject libsfml-graphics-d.a libsfml-window-d.a libsfml-system-d.a)
+  target_link_libraries(Snake libsfml-graphics-d.a libsfml-window-d.a libsfml-system-d.a)
 endif (WIN32)

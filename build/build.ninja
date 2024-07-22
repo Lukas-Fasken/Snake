@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: EGProject
+# Project: Snake
 # Configurations: Debug
 # =============================================================================
 
@@ -41,46 +41,46 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/LukasFasken/Desktop/Git/Projekts/Snake/build/
 # =============================================================================
-# Object build statements for EXECUTABLE target EGProject
+# Object build statements for EXECUTABLE target Snake
 
 
 #############################################
-# Order-only phony target for EGProject
+# Order-only phony target for Snake
 
-build cmake_object_order_depends_target_EGProject: phony || .
+build cmake_object_order_depends_target_Snake: phony || .
 
-build CMakeFiles/EGProject.dir/src/main.cpp.obj: CXX_COMPILER__EGProject_unscanned_Debug C$:/Users/LukasFasken/Desktop/Git/Projekts/Snake/src/main.cpp || cmake_object_order_depends_target_EGProject
-  DEP_FILE = CMakeFiles\EGProject.dir\src\main.cpp.obj.d
+build CMakeFiles/Snake.dir/src/main.cpp.obj: CXX_COMPILER__Snake_unscanned_Debug C$:/Users/LukasFasken/Desktop/Git/Projekts/Snake/src/main.cpp || cmake_object_order_depends_target_Snake
+  DEP_FILE = CMakeFiles\Snake.dir\src\main.cpp.obj.d
   FLAGS = -g -std=gnu++11
   INCLUDES = -IC:/Users/LukasFasken/Desktop/Git/Projekts/Snake/include -IC:/Users/LukasFasken/Desktop/Git/Projekts/Snake/lib/SFML-2.6.1/include
-  OBJECT_DIR = CMakeFiles\EGProject.dir
-  OBJECT_FILE_DIR = CMakeFiles\EGProject.dir\src
+  OBJECT_DIR = CMakeFiles\Snake.dir
+  OBJECT_FILE_DIR = CMakeFiles\Snake.dir\src
 
-build CMakeFiles/EGProject.dir/src/utils.cpp.obj: CXX_COMPILER__EGProject_unscanned_Debug C$:/Users/LukasFasken/Desktop/Git/Projekts/Snake/src/utils.cpp || cmake_object_order_depends_target_EGProject
-  DEP_FILE = CMakeFiles\EGProject.dir\src\utils.cpp.obj.d
+build CMakeFiles/Snake.dir/src/utils.cpp.obj: CXX_COMPILER__Snake_unscanned_Debug C$:/Users/LukasFasken/Desktop/Git/Projekts/Snake/src/utils.cpp || cmake_object_order_depends_target_Snake
+  DEP_FILE = CMakeFiles\Snake.dir\src\utils.cpp.obj.d
   FLAGS = -g -std=gnu++11
   INCLUDES = -IC:/Users/LukasFasken/Desktop/Git/Projekts/Snake/include -IC:/Users/LukasFasken/Desktop/Git/Projekts/Snake/lib/SFML-2.6.1/include
-  OBJECT_DIR = CMakeFiles\EGProject.dir
-  OBJECT_FILE_DIR = CMakeFiles\EGProject.dir\src
+  OBJECT_DIR = CMakeFiles\Snake.dir
+  OBJECT_FILE_DIR = CMakeFiles\Snake.dir\src
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target EGProject
+# Link build statements for EXECUTABLE target Snake
 
 
 #############################################
-# Link the executable EGProject.exe
+# Link the executable Snake.exe
 
-build EGProject.exe: CXX_EXECUTABLE_LINKER__EGProject_Debug CMakeFiles/EGProject.dir/src/main.cpp.obj CMakeFiles/EGProject.dir/src/utils.cpp.obj
+build Snake.exe: CXX_EXECUTABLE_LINKER__Snake_Debug CMakeFiles/Snake.dir/src/main.cpp.obj CMakeFiles/Snake.dir/src/utils.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-Bstatic  -lsfml-graphics-d  -lsfml-window-d  -lsfml-system-d  -Wl,-Bdynamic  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LC:/Users/LukasFasken/Desktop/Git/Projekts/Snake/lib/SFML-2.6.1/lib
-  OBJECT_DIR = CMakeFiles\EGProject.dir
+  OBJECT_DIR = CMakeFiles\Snake.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = EGProject.exe
-  TARGET_IMPLIB = libEGProject.dll.a
-  TARGET_PDB = EGProject.exe.dbg
+  TARGET_FILE = Snake.exe
+  TARGET_IMPLIB = libSnake.dll.a
+  TARGET_PDB = Snake.exe.dbg
 
 
 #############################################
@@ -133,7 +133,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build EGProject: phony EGProject.exe
+build Snake: phony Snake.exe
 
 # =============================================================================
 # Folder targets.
@@ -143,7 +143,7 @@ build EGProject: phony EGProject.exe
 #############################################
 # Folder: C:/Users/LukasFasken/Desktop/Git/Projekts/Snake/build
 
-build all: phony EGProject.exe
+build all: phony Snake.exe
 
 # =============================================================================
 # Built-in targets

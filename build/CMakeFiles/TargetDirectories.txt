@@ -1,4 +1,4 @@
-C:/Users/LukasFasken/Desktop/Git/Projekts/Snake/build/CMakeFiles/EGProject.dir
+C:/Users/LukasFasken/Desktop/Git/Projekts/Snake/build/CMakeFiles/Snake.dir
 C:/Users/LukasFasken/Desktop/Git/Projekts/Snake/build/CMakeFiles/package.dir
 C:/Users/LukasFasken/Desktop/Git/Projekts/Snake/build/CMakeFiles/package_source.dir
 C:/Users/LukasFasken/Desktop/Git/Projekts/Snake/build/CMakeFiles/edit_cache.dir
