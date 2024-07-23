@@ -80,7 +80,7 @@
 30	728	7432965564820746	CMakeFiles/EGProject.dir/src/main.cpp.obj	8f428848a2ac32e
 44911	52075	7431794228778613	_deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundBuffer.cpp.obj	8e3db465f559f7ed
 31302	36881	7431794092739022	_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Text.cpp.obj	237d140cb14ae01e
-27	773	7433696651818612	CMakeFiles/Snake.dir/src/main.cpp.obj	9bdd5f710d462750
+31	814	7434012167357529	CMakeFiles/Snake.dir/src/main.cpp.obj	9bdd5f710d462750
 35638	44850	7431794137332223	_deps/sfml-build/src/SFML/Network/CMakeFiles/sfml-network.dir/Packet.cpp.obj	4ca4b07a28cd5135
 22184	38559	7431794001848869	_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/ImageLoader.cpp.obj	4c4c08b2ddb779c5
 34311	39168	7431794122913293	_deps/sfml-build/src/SFML/Network/CMakeFiles/sfml-network.dir/Ftp.cpp.obj	b4be1b2b5da284c9
@@ -114,7 +114,7 @@
 48965	56156	7431794269321112	_deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileReaderMp3.cpp.obj	ed61d6159eb02a6c
 56156	56495	7431794341020153	_deps/sfml-build/lib/libsfml-audio-s-d.a	fc589ba31ace77a
 729	853	7432965571814274	EGProject.exe	f1802a5ed5de37ed
-26	708	7433288319380945	CMakeFiles/Snake.dir/src/utils.cpp.obj	8cdfd3d806b9121d
-774	893	7433696659366262	Snake.exe	e0765215c9b78585
-32	826	7433698130857243	CMakeFiles/Snake.dir/src/main.cpp.obj	9bdd5f710d462750
-826	950	7433698138801406	Snake.exe	e0765215c9b78585
+35	585	7434012167467320	CMakeFiles/Snake.dir/src/utils.cpp.obj	8cdfd3d806b9121d
+814	946	7434012175256319	Snake.exe	e0765215c9b78585
+30	685	7434012726500651	CMakeFiles/Snake.dir/src/utils.cpp.obj	8cdfd3d806b9121d
+686	833	7434012733098415	Snake.exe	e0765215c9b78585

@@ -2,8 +2,11 @@
 #include "utils.hpp"
 
 
-int rand(){
-    return 2;
+int random(int max, float seed){
+    srand (time(NULL)*(int)seed);
+    int num=rand() % max;
+    return num;
+    
 }
 
 

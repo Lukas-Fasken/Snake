@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
-int rand();
+int random(int max, float seed);
 
 //sf::Text write(sf::String input, int posX, int posY, int size, sf::Color color);
 /*
