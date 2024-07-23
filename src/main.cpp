@@ -1,9 +1,13 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <deque>
+#include <vector>
 #include "utils.hpp"
 
-int gamewidth = sf::VideoMode::getDesktopMode().width;
-int gameheight = sf::VideoMode::getDesktopMode().height;
+// int gamewidth = sf::VideoMode::getDesktopMode().width;
+int gamewidth = 800;
+// int gameheight = sf::VideoMode::getDesktopMode().height;
+int gameheight = 600;
 
 int main()
 {
@@ -21,20 +25,31 @@ int main()
 
     // Snake object
     sf::CircleShape Snake(10.f, 3);
-
     Snake.setPosition(gamewidth / 2, gameheight / 2);
     Snake.setOrigin(10, 10);
     Snake.setFillColor(sf::Color::White);
     float directionX = 0, directionY = 0;
     float constRot = -30;
     Snake.setRotation(constRot);
-    int length = 1;
+    size_t length = 0;
 
     // food object
     sf::CircleShape food(8.f);
     food.setOrigin(8, 8);
-    Snake.setFillColor(sf::Color::White);
+    food.setFillColor(sf::Color::Green);
     food.setPosition(random(gamewidth, gametime.getElapsedTime().asSeconds()), random(gameheight, gametime.getElapsedTime().asSeconds()));
+
+    // leader path
+    std::deque<sf::Vector2f> path;
+    path.push_back(Snake.getOrigin());
+    size_t PATH_LENGTH = 0;
+
+    // follower
+    std::vector<sf::CircleShape> followers(0, sf::CircleShape(8.f));
+    sf::CircleShape follower(8.f);
+    follower.setOrigin(8, 8);
+    follower.setFillColor(sf::Color::White);
+    size_t offset = 1000;
 
     sf::Text bob;
     while (window.isOpen())
@@ -84,14 +99,38 @@ int main()
                 }
             }
         }
+
+        if (path.size() >= PATH_LENGTH)
+        {
+            path.pop_front();
+        }
+        path.push_back(Snake.getPosition());
+
         sf::FloatRect FoodBound = food.getGlobalBounds();
         sf::FloatRect SnakeBound = Snake.getGlobalBounds();
 
         if (SnakeBound.intersects(FoodBound))
         {
             length = length + 1;
+            PATH_LENGTH = (length+1) * offset;
+            sf::CircleShape follower(8.f);
+            follower.setFillColor(sf::Color::White);
+            follower.setOrigin(8, 8);
+            followers.push_back(follower);
             food.setPosition(random(gamewidth, gametime.getElapsedTime().asSeconds()), random(gameheight, gametime.getElapsedTime().asSeconds()));
-            
+        }
+
+        // follower positioning
+        for (size_t i = 0; i < followers.size(); ++i)
+        {
+            if (path.size() >= (i + 1) * offset)
+            {
+                followers[i].setPosition(path[(i + 1) * offset]);
+            }
+            else
+            {
+                followers[i].setPosition(path[(int)path.size()]);
+            }
         }
 
         float speed = 100;
@@ -99,9 +138,12 @@ int main()
         Snake.move(elapsed * speed * directionX, elapsed * speed * directionY);
 
         window.clear();
+        for (auto &follower : followers)
+        {
+            window.draw(follower);
+        }
         window.draw(Snake);
         window.draw(food);
-        window.draw(bob);
 
         window.display();
     }

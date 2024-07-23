@@ -3,12 +3,23 @@
 
 
 int random(int max, float seed){
-    srand (time(NULL)*(int)seed);
+    srand (time(NULL)*((int)seed+1));
     int num=rand() % max;
     return num;
     
 }
 
+// class object{
+//     private:
+//     sf::CircleShape follower(float x=8);
+//     public:
+//     int posX;
+//     int posY;
+//     object(int posX, int posY){
+//         this->posX=posX;
+//         this->posY=posY;
+//     }
+// };
 
 /*
 sf::Text write(sf::String& input, int posX, int posY, int size, sf::Color& color){
