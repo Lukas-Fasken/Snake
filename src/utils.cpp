@@ -9,6 +9,16 @@ int random(int max, float seed){
     
 }
 
+sf::RectangleShape convertToRectangleShape(sf::FloatRect& rect) {
+    sf::RectangleShape rectangle;
+    rectangle.setPosition(rect.left, rect.top);
+    rectangle.setSize(sf::Vector2f(rect.width, rect.height));
+    rectangle.setFillColor(sf::Color::Transparent);
+    rectangle.setOutlineThickness(1);
+    rectangle.setOutlineColor(sf::Color::Blue);
+    return rectangle;
+}
+
 // class object{
 //     private:
 //     sf::CircleShape follower(float x=8);

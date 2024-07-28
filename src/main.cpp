@@ -32,6 +32,7 @@ int main()
     float constRot = -30;
     Snake.setRotation(constRot);
     size_t length = 0;
+    float speed = 100;
 
     // food object
     sf::CircleShape food(8.f);
@@ -46,10 +47,13 @@ int main()
 
     // follower
     std::vector<sf::CircleShape> followers(0, sf::CircleShape(8.f));
-    sf::CircleShape follower(8.f);
-    follower.setOrigin(8, 8);
-    follower.setFillColor(sf::Color::White);
+    // sf::CircleShape follower(8.f);
+    // follower.setOrigin(8, 8);
+    // follower.setFillColor(sf::Color::White);
     size_t offset = 1000;
+
+    //collision box outline
+    
 
     sf::Text bob;
     while (window.isOpen())
@@ -95,19 +99,44 @@ int main()
                     bob.setFont(font);
                     bob.setCharacterSize(24);
                     bob.setFillColor(sf::Color::Red);
-                    std::cout << "bob" + str << std::endl;
+                    
                 }
             }
         }
+        //snake movement
+        float elapsed = clock.restart().asSeconds();
+        Snake.move(elapsed * speed * directionX, elapsed * speed * directionY);
 
+        //path queue
         if (path.size() >= PATH_LENGTH)
         {
             path.pop_front();
         }
         path.push_back(Snake.getPosition());
 
+        // follower positioning
+        
+        for (size_t i = 0; i < followers.size(); ++i)
+        {
+            if (path.size() >= (i + 1) * offset)
+            {
+                followers[i].setPosition(path[(i + 1) * offset]);
+            }
+            else
+            {
+                followers[i].setPosition(path[(int)path.size()]);
+            }
+        }
+        
+        //collision with food
+        std::vector<sf::RectangleShape> collisionBoxes(0, sf::RectangleShape());
         sf::FloatRect FoodBound = food.getGlobalBounds();
+        sf::RectangleShape foodbox=convertToRectangleShape(FoodBound);
+        // collisionBoxes.push_back(foodbox);
         sf::FloatRect SnakeBound = Snake.getGlobalBounds();
+        sf::RectangleShape snakebox=convertToRectangleShape(SnakeBound);
+        // collisionBoxes.push_back(snakebox);
+
 
         if (SnakeBound.intersects(FoodBound))
         {
@@ -120,27 +149,26 @@ int main()
             food.setPosition(random(gamewidth, gametime.getElapsedTime().asSeconds()), random(gameheight, gametime.getElapsedTime().asSeconds()));
         }
 
-        // follower positioning
-        for (size_t i = 0; i < followers.size(); ++i)
-        {
-            if (path.size() >= (i + 1) * offset)
-            {
-                followers[i].setPosition(path[(i + 1) * offset]);
+        //collision with itself
+        for (size_t i = 0; i < followers.size(); ++i){
+            sf::FloatRect followerBound=followers[i].getGlobalBounds();
+            followerBound.width=followerBound.width*0.0001;
+            followerBound.height=followerBound.height*0.0001;
+            sf::RectangleShape collbox=convertToRectangleShape(followerBound);
+            collisionBoxes.push_back(collbox);
+            if (followerBound.intersects(SnakeBound)){
+                std::cout << "Collision" << std::endl;
             }
-            else
-            {
-                followers[i].setPosition(path[(int)path.size()]);
-            }
-        }
-
-        float speed = 100;
-        float elapsed = clock.restart().asSeconds();
-        Snake.move(elapsed * speed * directionX, elapsed * speed * directionY);
+        }   
 
         window.clear();
         for (auto &follower : followers)
         {
             window.draw(follower);
+        }
+        for (auto &collbox : collisionBoxes)
+        {
+            window.draw(collbox);
         }
         window.draw(Snake);
         window.draw(food);

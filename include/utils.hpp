@@ -5,6 +5,8 @@
 
 int random(int max, float seed);
 
+sf::RectangleShape convertToRectangleShape(sf::FloatRect& rect);
+
 // class object{
 //     int posX;
 //     int posY;
